@@ -1,0 +1,52 @@
+{
+  "version": "2.0.0",
+  "presentation": {
+    "echo": false,
+    "reveal": "always",
+    "focus": false,
+    "panel": "dedicated",
+    "showReuseMessage": true
+  },
+  "tasks": [
+    {
+      "label": "Run apps",
+      "dependsOn": [
+        "App1",
+        "App2"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true,
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "App1",
+      "type": "shell",
+      "command": "npm start",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "group": "my-group"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/app1"
+      }
+    },
+    {
+      "label": "App2",
+      "type": "shell",
+      "command": "npm start",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "group": "my-group"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/app2"
+      }
+    }
+  ]
+}
